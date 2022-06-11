@@ -1,0 +1,123 @@
+
+
+/*--------------------------------------------------------------
+form
+--------------------------------------------------------------*/
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://ugc.futurelearn.com/uploads/images/58/05/header_58058f3e-46c9-41a8-8659-b698765098c3.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 5rem;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+
+/*--------------------------------------------------------------
+background
+--------------------------------------------------------------*/
+
+.bg-cover {
+    background-size: cover !important;
+}
+/*--------------------------------------------------------------
+navbar
+--------------------------------------------------------------*/
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #ff5821;
+}
+/*--------------------------------------------------------------
+Imagenes
+--------------------------------------------------------------*/
+body {
+  margin: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Raleway", sans-serif !important;
+    color: #ff5821 !important;
+  
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.front{
+	width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-wrapper > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+@media only screen and (max-width: 320px) {
+	.img-wrapper > .content {
+	  font-size: 2rem;
+	}
+}
+.img-wrapper > .content {
+  position: absolute;
+  inset: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  background:#ff582190;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper > img,
+.img-wrapper > .content {
+  transition: 200ms ease-in-out;
+}
+
+.img-wrapper:hover > img.blur {
+  filter: blur(5px);
+}
+
+
+.img-wrapper:hover > img.zoom {
+  transform: scale(1.1);
+}
+
+.img-wrapper > .content.fade {
+  opacity: 0;
+}
+.img-wrapper:hover > .content.fade {
+  opacity: 1;
+}
+
+.img-wrapper > .content.slide-left {
+  transform: translateX(-100%);
+}
+.img-wrapper:hover > .content.slide-left {
+  transform: translateX(0);
+}
+
+
+
