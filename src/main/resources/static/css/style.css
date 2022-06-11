@@ -31,8 +31,16 @@ background
 --------------------------------------------------------------*/
 
 .bg-cover {
-    background-size: cover !important;
+	background-size: cover;
+            height: 450px;
+            position: relative;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
 }
+
+
+
 /*--------------------------------------------------------------
 navbar
 --------------------------------------------------------------*/

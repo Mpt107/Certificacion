@@ -6,6 +6,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class EstudianteDTO implements Serializable {
 	/**
@@ -14,7 +15,6 @@ public class EstudianteDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@NotEmpty (message = "rut no puede ser vacio")
-	//@Pattern (regexp = "^(\\d{1,9}{2}[\\dkK])$", message = "RUT invalido")
 	private String rut;
 	@NotEmpty (message = "nombre no puede ser vacio")
 	private String nombre;
@@ -33,8 +33,8 @@ public class EstudianteDTO implements Serializable {
 	private Integer enabled;
 	
 	private Integer idCurso;
-	
-	@Min(value = 18, message = "No puede ser menor de edad")
+	@NotNull(message = "edad no puede estar vacia")
+	@Min(value = 18, message = "No puede ser menor de edad para postular")
 	@Max(value = 99, message = "No puede ser mayor de 99 años")
 	private Integer edad;
 	

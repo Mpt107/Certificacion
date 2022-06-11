@@ -6,12 +6,12 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Sistema Certificación</title>
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
 	integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link th:rel="stylesheet" type="text/css" th:href="@{/css/style.css}" /></link>
-
 </head>
 <body>
 <div class="container">
@@ -20,7 +20,8 @@
 		    <h3>Crear Curso</h3>
 		  </div>
       
- 
+   <div class="row">
+   	<div class="col">
         <form action="#" th:action="@{/admin/guardarCurso}" th:object="${curso}" method="post">
 			 <fieldset>
                     <legend>Información del curso</legend>
@@ -28,7 +29,7 @@
 					<input id="idcurso" th:field="*{id}" type="hidden">
                    
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 ">
+                        <div class="col-xs-12 col-sm-6">
                             <div class="form-group">
                                 <label for="nombre">Nombre *</label>
                                 <input id="nombre" name="nombre" th:field="*{nombre}" type="text"
@@ -62,23 +63,16 @@
                                 <input id="cupos" name="cupos" th:field="*{cupos}" type="number"
                                        class="form-control required">
                      		</div>
-                     		</div>
-                        
+                        </div>
                     </div>
 			 </fieldset>  
-			 
+			 <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button> 
 		</form>
 		<span style="color:red" th:text="${mensaje}"></span>
-		
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button> 
-		
-   	
+   	</div>
   </div>
+</div>
 
 
-<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"
-		integrity="sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script> 	
 </body>
 </html>

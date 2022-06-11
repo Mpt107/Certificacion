@@ -3,6 +3,7 @@ package cl.aiep.certif.dao.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -22,11 +23,14 @@ public class CursoDTO implements Serializable {
 	private String imagen;
 	@NotNull(message = "Fecha Inicio no debe ser vacio")
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
+	@Future
 	private Date fecinicio;
 	@NotNull(message = "Fecha Termino no debe ser vacio")
 	@DateTimeFormat (pattern = "yyyy-MM-dd" )
+	@Future
 	private Date fectermino;
-	@Min(value = 1, message = "Cupos no debe ser vacio")
+	@NotNull(message = "Cupos no debe ser vacio")
+	@Min(value = 1, message = "debe tener 1 o ams cupos")
 	private Integer cupos;
 	@NotEmpty(message = "Descripcion no debe ser vacio")
 	private String descripcion;

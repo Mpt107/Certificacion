@@ -31,26 +31,24 @@ public class ModuloSeguridad extends WebSecurityConfigurerAdapter{
     	http.httpBasic()
     	.and()
     	.authorizeRequests()
-//    	.antMatchers(HttpMethod.GET, "/obtiene/**").hasAuthority("USER")
-//    	.antMatchers(HttpMethod.GET, "/obtiene/").hasAuthority("USER")
-//    	.antMatchers(HttpMethod.POST, "/obtiene").hasAuthority("ADMIN")
-//	    .antMatchers(HttpMethod.PUT, "/obtiene/**").hasAuthority("ADMIN")
-//	    .antMatchers(HttpMethod.PUT, "/api/savePais/**").hasAuthority("ADMIN")
-//	    .antMatchers(HttpMethod.PATCH, "/obtiene/**").hasAuthority("ADMIN")
+
 	    .antMatchers(HttpMethod.GET, "/admin/**").hasAuthority("ADMIN")
     	.antMatchers(HttpMethod.GET, "/obtiene/{id}/").permitAll()
 
 	    .antMatchers(HttpMethod.POST, "/admin/**").hasAuthority("ADMIN")
     	.antMatchers(HttpMethod.GET, "/registrate").permitAll()
     	.antMatchers(HttpMethod.GET, "/").permitAll()
-
         .and()
-        .formLogin().loginPage("/login").permitAll()
+        .formLogin().loginPage("/login")
+        .permitAll()
         .and()
- .logout().clearAuthentication(true).logoutSuccessUrl("/").permitAll();    
+        .exceptionHandling().accessDeniedPage("/error_403")
+        .and()
+        .logout().clearAuthentication(true).logoutSuccessUrl("/").permitAll();   
         
         http.csrf().disable();
         http.headers().frameOptions().disable();
+        
     }
 	
 	
